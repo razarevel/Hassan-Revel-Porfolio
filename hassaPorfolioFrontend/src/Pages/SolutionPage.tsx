@@ -1,3 +1,9 @@
+import NavbarMain from "../Components/Navbar/NavbarMain";
+
 export default function SolutionPage() {
-    return <>Welcome to Solution Page</>;
+  return (
+    <section id="solutionPage">
+      <NavbarMain />
+    </section>
+  );
   }

@@ -44,3 +44,11 @@
     url("../src/assets/Fonts/montserrat Static/Montserrat-Black.ttf")
       format("truetype");
 }
+
+/* BebasNeue font */
+
+@font-face {
+  font-family: font-BebasNeue;
+  src: local("BebasNeue-Regular"),
+    url("../src/assets/Fonts/BebasNeue-Regular.ttf") format("truetype");
+}

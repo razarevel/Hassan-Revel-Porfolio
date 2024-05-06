@@ -1,3 +1,9 @@
+import NavbarMain from "../Components/Navbar/NavbarMain";
+
 export default function VlogsPage() {
-  return <>Welcome to Vlogs Page</>;
+  return (
+    <section id="vlogsPage">
+      <NavbarMain />
+    </section>
+  );
 }

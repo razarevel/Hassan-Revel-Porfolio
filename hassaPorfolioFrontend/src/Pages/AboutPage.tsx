@@ -1,3 +1,9 @@
+import NavbarMain from "../Components/Navbar/NavbarMain";
+
 export default function AboutPage() {
-    return <>Welcome to About Page</>;
-  }
+  return (
+    <section id="aboutPage">
+      <NavbarMain />
+    </section>
+  );
+}

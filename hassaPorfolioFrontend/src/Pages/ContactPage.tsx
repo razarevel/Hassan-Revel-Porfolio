@@ -1,3 +1,9 @@
+import NavbarMain from "../Components/Navbar/NavbarMain";
+
 export default function ContactPage() {
-  return <>Welcome to Contact Page</>;
+  return (
+    <section id="contactPage">
+      <NavbarMain />
+    </section>
+  );
 }

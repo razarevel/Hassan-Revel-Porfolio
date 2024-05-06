@@ -5,12 +5,17 @@ export default {
     extend: {
       fontFamily: {
         Island: "font-island",
+        BebasNeue: "font-BebasNeue",
         Light: "Montserrat-Light",
         Regular: "Montserrat-Regular",
         Medium: "Montserrat-Medium",
-        Semibold: "Montserrat-SemiBold",
+        SemiBold: "Montserrat-SemiBold",
         Bold: "Montserrat-Bold",
         Black: "Montserrat-Black",
+      },
+      colors: {
+        darkBlue: "#121275",
+        heavyBlue: "#111275",
       },
     },
   },
