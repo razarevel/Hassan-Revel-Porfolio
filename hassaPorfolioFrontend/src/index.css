@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* island */
+@font-face {
+  font-family: font-island;
+  src: local("IslandMoments-Regular"),
+    url("../src/assets/Fonts/IslandMoments-Regular.ttf") format("truetype");
+}
+/* Montserrat */
+@font-face {
+  font-family: Montserrat-Light;
+  src: local("Montserrat-Light"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-Light.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Montserrat-Regular;
+  src: local("Montserrat-Regular"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-Regular.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: local("Montserrat-Medium"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-Medium.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: local("Montserrat-SemiBold"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-SemiBold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  src: local("Montserrat-Bold"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-Bold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: Montserrat-Black;
+  src: local("Montserrat-Black"),
+    url("../src/assets/Fonts/montserrat Static/Montserrat-Black.ttf")
+      format("truetype");
+}
