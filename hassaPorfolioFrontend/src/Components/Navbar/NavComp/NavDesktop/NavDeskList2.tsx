@@ -23,8 +23,13 @@ export default function NavDeskList2() {
     },
   ];
   return (
-    <>
-      <div className="flex items-center space-x-[2vh] relative z-20 bg-slate-300 text-white">
+    <div
+      className="h-full flex items-center justify-center right-0 top-0 absolute"
+      style={{
+        background: `url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/cmh-right-bg.jpg")`,
+      }}
+    >
+      <div className="flex items-center space-x-[2vh] relative z-20  text-white lg:px-[9vh] ">
         <div className="flex items-center space-x-[1.5vh]">
           {context.map((el, index) => (
             <div key={index}>
@@ -49,6 +54,6 @@ export default function NavDeskList2() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

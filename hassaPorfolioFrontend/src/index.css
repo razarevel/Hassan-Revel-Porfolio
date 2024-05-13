@@ -52,3 +52,11 @@
   src: local("BebasNeue-Regular"),
     url("../src/assets/Fonts/BebasNeue-Regular.ttf") format("truetype");
 }
+
+/* nav bg */
+.nav-bg {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/fixed-header-left-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
