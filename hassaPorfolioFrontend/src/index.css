@@ -60,3 +60,26 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.navbar-img {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/contact/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about-sec1-img {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/about/ip-about-sec2-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-Sec2-img {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/about/ip-about-sec3-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.img-sec2-h{
+  
+}

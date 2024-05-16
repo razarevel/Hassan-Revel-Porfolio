@@ -8,7 +8,7 @@ export default function NavDeskList1() {
   ];
   return (
     <div className="w-[75%] flex items-center  nav-bg">
-      <div className="flex items-center space-x-[4vh] xl:space-x-[6vh] lg:px-[9vh] ">
+      <div className="flex items-center space-x-[4vh] xl:space-x-[6vh] lg:px-[9vh]">
         <Link to="/">
           <Logo />
         </Link>
