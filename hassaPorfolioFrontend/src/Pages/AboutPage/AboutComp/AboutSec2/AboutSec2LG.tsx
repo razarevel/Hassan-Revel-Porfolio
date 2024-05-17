@@ -31,7 +31,7 @@ export default function AboutSec2LG() {
       <img
         src="https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/about/ip-about-sec3-overlay.jpg"
         alt=""
-        className="absolute left-0 top-0 h-full -z-10"
+        className="absolute left-0 top-0 h-[95%] -z-10"
       />
       <div className="flex justify-between  overflow-hidden lg:overflow-visible about-Sec2-img max-w-[97.18%] lg:space-x-24">
         {/* context */}
