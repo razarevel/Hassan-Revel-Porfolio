@@ -8,12 +8,12 @@ export default function NavbarMain() {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
-    <section id="nav">
+    <section id="nav" className="relative">
       <NavDesktop show={isInView} />
       <AbsoluteNav />
       <NavMobile />
       <div
-        className="absolute w-full top-0 left-0 h-[10vw] hidden lg:block"
+        className="absolute w-full top-0 left-0 h-[100%] -z-10  "
         ref={ref}
       ></div>
     </section>

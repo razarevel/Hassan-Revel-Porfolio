@@ -4,7 +4,6 @@ export default function NavDeskList1() {
   const context = [
     { text: "About", link: "/about" },
     { text: "Solutions", link: "/solutions" },
-    { text: "Portfolio", link: "/portfolio" },
   ];
   return (
     <div className="w-[75%] flex items-center  nav-bg">
@@ -31,7 +30,10 @@ export default function NavDeskList1() {
                   </Link>
                 </div>
                 <div>
-                  <Link to="/vlogs">
+                  <Link
+                    to="https://www.youtube.com/@hassanrevel"
+                    target="_blank"
+                  >
                     <p>VLOGS</p>
                   </Link>
                 </div>

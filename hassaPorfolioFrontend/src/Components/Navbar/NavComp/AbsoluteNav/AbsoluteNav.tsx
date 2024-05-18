@@ -5,7 +5,6 @@ export default function AbsoluteNav() {
   const context = [
     { text: "About", link: "/about" },
     { text: "Solutions", link: "/solutions" },
-    { text: "Portfolio", link: "/portfolio" },
   ];
   const contextImg = [
     {
@@ -55,7 +54,10 @@ export default function AbsoluteNav() {
                     </Link>
                   </div>
                   <div>
-                    <Link to="/vlogs">
+                    <Link
+                      to="https://www.youtube.com/@hassanrevel"
+                      target="_blank"
+                    >
                       <p>VLOGS</p>
                     </Link>
                   </div>

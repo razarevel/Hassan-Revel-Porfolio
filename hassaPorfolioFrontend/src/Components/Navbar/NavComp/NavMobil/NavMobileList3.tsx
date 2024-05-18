@@ -10,9 +10,12 @@ export default function NavMobileList3({ show, setShow }: Props) {
   const context = [
     { text: "About", link: "/about" },
     { text: "Solutions", link: "/solutions" },
-    { text: "Portfolio", link: "/portfolio" },
     { text: "Blogs", link: "/blogs" },
-    { text: "Vlogs", link: "/vlogs" },
+    {
+      text: "Vlogs",
+      link: "https://www.youtube.com/@hassanrevel",
+      target: "_blank",
+    },
     { text: "Contact", link: "/contact" },
   ];
   const contextImg = [
@@ -73,7 +76,9 @@ export default function NavMobileList3({ show, setShow }: Props) {
           <div className="font-Bold text-[2.2vh] space-y-[1vh] uppercase px-[4vh]">
             {context.map((el, index) => (
               <div key={index} className="hover:text-heavyBlue duration-300">
-                <Link to={el.link}>{el.text}</Link>
+                <Link to={el.link} target={el.target}>
+                  {el.text}
+                </Link>
               </div>
             ))}
           </div>
