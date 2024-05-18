@@ -5,7 +5,7 @@ import SolutionPage from "../Pages/SolutionPage";
 import PortfolioPage from "../Pages/Portfolio";
 import BlogsPage from "../Pages/BlogPage/BlogsPage";
 import VlogsPage from "../Pages/VlogsPage";
-import ContactPage from "../Pages/ContactPage";
+import ContactPage from "../Pages/ContactPage/ContactPage";
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/about", element: <AboutPage /> },
