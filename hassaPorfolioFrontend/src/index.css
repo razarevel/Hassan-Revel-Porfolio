@@ -87,3 +87,13 @@
 .footer-b {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+/* remove arrow */
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.remove-arrow {
+    -moz-appearance: textfield;
+}

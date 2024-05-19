@@ -17,7 +17,7 @@ export default function FooterList3() {
         What are you interested In?
       </h1>
       {/* checkboxs */}
-      <div className="text-[11px] lg:text-[.93vw] space-y-1 lg:space-y-[0.625vw] pt-[1.875vw]">
+      <div className="text-[11px] lg:text-[.93vw] space-y-1 lg:space-y-[0.625vw] pt-[1.875vw] cursor-pointer">
         {context.map((el, index) => (
           <div
             key={index}
