@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import Logo from "../../../Logo";
+import useZustand from "../../../../utilities/zustand";
 export default function NavDeskList1() {
   const context = [
     { text: "About", link: "/about" },
     { text: "Solutions", link: "/solutions" },
   ];
+  const { setSubsFixForm } = useZustand();
   return (
-    <div className="w-[75%] flex items-center  nav-bg">
+    <div
+      className="w-[75%] flex items-center  nav-bg"
+      onClick={() => setSubsFixForm(false)}
+    >
       <div className="flex items-center space-x-[4vh] xl:space-x-[6vh] lg:px-[9vh]">
         <Link to="/">
           <Logo />
@@ -39,6 +44,9 @@ export default function NavDeskList1() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="hover:text-heavyBlue duration-300">
+            <Link to={"/contact"}>Contact</Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import FooterList3 from "../../../Footer/FooterComp/FooterList3";
+import useZustand from "../../../../utilities/zustand";
 export default function NavDeskList2() {
   const context = [
     {
@@ -22,12 +25,15 @@ export default function NavDeskList2() {
       link: "https://twitter.com/hassanrevel",
     },
   ];
+  const { subsFixForms, setSubsFixForm } = useZustand();
+
   return (
     <div
       className="h-full flex items-center justify-center right-0 top-0 absolute"
       style={{
         background: `url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/cmh-right-bg.jpg")`,
       }}
+      onClick={() => subsFixForms && setSubsFixForm(false)}
     >
       <div className="flex items-center space-x-[2vh] relative z-20  text-white lg:px-[9vh] ">
         <div className="flex items-center space-x-[1.5vh]">
@@ -46,12 +52,13 @@ export default function NavDeskList2() {
         {/* border */}
         <div className=" h-[4vh] w-[0.1vh] bg-slate-100"></div>
         {/* contact btn */}
-        <div>
-          <Link to={"/contact"}>
-            <p className="font-Bold text-[1.6vh] xl:text-[2vh] uppercase hover:opacity-60 duration-300">
-              CONTACT
-            </p>
-          </Link>
+        <div className="relative">
+          <p
+            className="font-Bold text-[1.6vh] xl:text-[2vh] uppercase hover:opacity-60 duration-300 cursor-pointer"
+            onClick={() => setSubsFixForm(!subsFixForms)}
+          >
+            SUBSCRIBE
+          </p>
         </div>
       </div>
     </div>

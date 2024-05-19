@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../../../Logo";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import FooterList3 from "../../../Footer/FooterComp/FooterList3";
+import useZustand from "../../../../utilities/zustand";
 
 export default function AbsoluteNav() {
   const context = [
@@ -28,9 +32,31 @@ export default function AbsoluteNav() {
       link: "https://twitter.com/hassanrevel",
     },
   ];
+  const { subsForms, setSubsForm } = useZustand();
   return (
-    <div className="hidden lg:flex absolute w-full top-0 left-0 justify-between h-[8vw] ">
-      <div className="navbar-img lg:px-[9vh] flex items-center w-[55.5vw] 2xl:w-[60vw]">
+    <div className="hidden lg:flex absolute w-full top-0 left-0 justify-between h-[8vw]">
+      <AnimatePresence>
+        {subsForms && (
+          <motion.div
+            className="absolute top-[8vw] right-[1vw] w-[32.063vw] sub-bg-img z-50 text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              ease: "linear",
+              duration: 0.4,
+            }}
+          >
+            <div className="z-30 relative pt-[4.5vw] px-[4.563vw] pb-[1vw]">
+              <FooterList3 />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div
+        className="navbar-img lg:px-[9vh] flex items-center w-[55.5vw] 2xl:w-[60vw]"
+        onClick={() => subsForms && setSubsForm(false)}
+      >
         <div className="flex items-center space-x-[4vh] xl:space-x-[6vh] relative z-20">
           <Link to="/">
             <Logo />
@@ -64,6 +90,9 @@ export default function AbsoluteNav() {
                 </div>
               </div>
             </div>
+            <div className="hover:text-heavyBlue duration-300">
+              <Link to={"/contact"}>Contact</Link>
+            </div>
           </div>
         </div>
         <div className="absolute w-full h-full left-0 top-0 bg-no-repeat">
@@ -72,7 +101,11 @@ export default function AbsoluteNav() {
       </div>
 
       {/* asdad */}
-      <div className="flex items-center space-x-[2vh] relative z-20  text-white lg:px-[9vh] ">
+
+      <div
+        className="flex items-center space-x-[2vh] relative z-20  text-white lg:px-[9vh]"
+        onClick={() => subsForms && setSubsForm(false)}
+      >
         <div className="flex items-center space-x-[1.5vh]">
           {contextImg.map((el, index) => (
             <div key={index}>
@@ -89,12 +122,13 @@ export default function AbsoluteNav() {
         {/* border */}
         <div className=" h-[4vh] w-[0.1vh] bg-slate-100"></div>
         {/* contact btn */}
-        <div>
-          <Link to={"/contact"}>
-            <p className="font-Bold text-[1.6vh] xl:text-[2vh] uppercase hover:opacity-60 duration-300">
-              CONTACT
-            </p>
-          </Link>
+        <div className="relative">
+          <p
+            className="font-Bold text-[1.6vh] xl:text-[2vh] uppercase hover:opacity-60 duration-300 cursor-pointer"
+            onClick={() => setSubsForm(!subsForms)}
+          >
+            SUBSCRIBE
+          </p>
         </div>
       </div>
     </div>

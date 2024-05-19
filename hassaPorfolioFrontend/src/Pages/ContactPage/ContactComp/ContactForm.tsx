@@ -1,11 +1,47 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ContactImage from "./ContactImage";
 import countries from "./countries";
 import FormHeading from "./FormHeading";
-
+interface Countries {
+  name: string;
+  code: string;
+  emoji: string;
+  unicode: string;
+  image: string;
+  dial_code: string;
+}
 export default function ContactForm() {
   const [show, setShow] = useState(false);
   const [select, setSelect] = useState<number>(0);
+  const [flags, setFlags] = useState<Countries[]>(countries);
+
+  const filterCountries = (letter: string) => {
+    const filtered = countries.filter((country) =>
+      country.name.toLowerCase().startsWith(letter.toLowerCase())
+    );
+    setFlags([...filtered, ...countries]);
+  };
+
+  const keyCapture = useCallback(
+    (event: React.KeyboardEvent) => {
+      const keyPressed = event.key.toLocaleLowerCase();
+      if (/^[a-z]$/.test(keyPressed)) {
+        return filterCountries(keyPressed);
+      }
+      return;
+    },
+    [show]
+  );
+  useEffect(() => {
+    if (show === true) {
+      document.addEventListener("keydown", keyCapture, false);
+      return () => {
+        document.removeEventListener("keydown", keyCapture, false);
+      };
+    }
+    return;
+  }, [keyCapture, show]);
+  console.log(show);
   return (
     <div
       className="lg:flex justify-between mb-[56px] lg:mb-[12vw]"
@@ -56,11 +92,11 @@ export default function ContactForm() {
                 className="w-10 h-full cursor-pointer flex items-center "
                 onClick={() => setShow(!show)}
               >
-                <img src={countries[select].image} alt="" />
+                <img src={flags[select].image} alt="" />
               </div>
               {show && (
-                <div className="absolute w-[80%] h-[200px] top-[42px] lg:h-[12vw] lg:top-[3.063vw] left-0 overflow-y-scroll cursor-pointer" >
-                  {countries.map((el, index) => (
+                <div className="absolute w-[80%] h-[200px] top-[42px] lg:h-[12vw] lg:top-[3.063vw] left-0 overflow-y-scroll cursor-pointer">
+                  {flags.map((el, index) => (
                     <div
                       className="flex items-center justify-between bg-white px-4"
                       key={index}
@@ -79,7 +115,7 @@ export default function ContactForm() {
                 type="number"
                 name=""
                 id=""
-                className="focus:outline-none  text-[#333333] placeholder:text-[#333333] remove-arrow"
+                className="focus:outline-none  text-[#333333] placeholder:text-[#333333] remove-arrow w-full"
                 placeholder="Phone"
               />
             </div>

@@ -17,22 +17,24 @@ export default function FooterList3() {
         What are you interested In?
       </h1>
       {/* checkboxs */}
-      <div className="text-[11px] lg:text-[.93vw] space-y-1 lg:space-y-[0.625vw] pt-[1.875vw] cursor-pointer">
+      <div className="text-[11px] lg:text-[.93vw] space-y-1 lg:space-y-[0.625vw] pt-[1.875vw] ">
         {context.map((el, index) => (
           <div
             key={index}
-            className="flex space-x-2"
+            className="flex items-start space-x-2 cursor-pointer"
             onClick={() => {
               if (select.includes(index))
                 return setSeleted(() => select.filter((num) => num != index));
               return setSeleted([...select, index]);
             }}
           >
-            <input
-              type="checkbox"
-              checked={checkedBoolean(index)}
-              style={{ width: "20px", height: "20px" }}
-            />
+            <div style={{ width: "20px", height: "20px" }}>
+              <input
+                type="checkbox"
+                checked={checkedBoolean(index)}
+                className="w-full h-full cursor-pointer"
+              />
+            </div>
             <p>{el}</p>
           </div>
         ))}
