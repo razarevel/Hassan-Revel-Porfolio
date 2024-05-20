@@ -18,9 +18,9 @@ export default function SolHero() {
           />
         </div>
         {/* context */}
-        <div className="px-[26px] space-y-10 lg:space-y-[1vw] lg:order-1 lg:w-[55.82%] lg:pt-[13vw] lg:pl-[6.6vw]">
+        <div className="px-[26px] space-y-10 lg:space-y-[1vw] lg:order-1 lg:w-[55.82%] lg:pt-[14vw] lg:pl-[6.6vw]">
           {/* heading */}
-          <h1 className="text-[#949494] text-[48px] lg:text-[4.375vw]">
+          <h1 className="text-darkBlue font-Bold text-[48px] lg:text-[4.375vw]">
             SOLUTIONS
           </h1>
           {/* para */}
