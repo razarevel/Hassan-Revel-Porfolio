@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../../../Logo";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 import FooterList3 from "../../../Footer/FooterComp/FooterList3";
 import useZustand from "../../../../utilities/zustand";
 
@@ -103,7 +102,7 @@ export default function AbsoluteNav() {
       {/* asdad */}
 
       <div
-        className="flex items-center justify-end space-x-[2vh] relative z-20  text-white lg:px-[9vh] bg-heavyBlue"
+        className="flex items-center justify-end space-x-[2vh] relative z-20  text-white lg:px-[9vh] "
         onClick={() => subsForms && setSubsForm(false)}
       >
         <div className="flex items-center space-x-[1.5vh]">

@@ -103,3 +103,33 @@
 .remove-arrow {
   -moz-appearance: textfield;
 }
+.hero-btn-border {
+  border: none;
+}
+.text-bg {
+  background: transparent
+    url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/homepage/real-estate-heading-bg.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (min-width: 1024px) {
+  .hero-btn-border {
+    border: 1px solid rgba(0, 1, 1, 0.3);
+  }
+}
+.reviews-bg {
+  filter: blur(20px);
+  background-size: cover !important;
+}
+.review-border {
+  border: 1px solid rgba(0, 1, 1, 0.3);
+}
+.my-swiper {
+  z-index: 30 !important;
+}
+.review-btn {
+  z-index: 20 !important;
+}
