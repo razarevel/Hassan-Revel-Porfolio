@@ -5,6 +5,7 @@ import AboutAI from "./HomeComps/AboutAI";
 import BlogSec from "./HomeComps/BlogSec";
 import HomeHero from "./HomeComps/HomeHero";
 import Reviews from "./HomeComps/Reviews/Reviews";
+import SocialMedia from "./HomeComps/SocialMedia/SocialMedia";
 import SolutionSec from "./HomeComps/SolutionSec";
 
 export default function HomePage() {
@@ -23,6 +24,7 @@ export default function HomePage() {
         <SolutionSec />
         <Reviews />
         <BlogSec />
+        <SocialMedia />
         <FooterMain />
       </div>
     </section>

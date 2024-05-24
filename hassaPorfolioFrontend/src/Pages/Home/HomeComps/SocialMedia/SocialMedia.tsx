@@ -1,13 +1,15 @@
+import SocialGrid from "./SocialGrid";
+import SocialHeading from "./SocialHeading";
+
 export default function SocialMedia() {
-  const para = `If there’s anything in the world that I love the most is making AI that can change the world forever, and I’d love to share my creation with you and connect with those who’re interested in hiring, learning and seeing my creation.`;
   return (
-    <section id="socialMedia">
-      <div>
-        <h1>
-          Engage <br /> with me <br /> 24/7
-        </h1>
-        <p>{para}</p>
-      </div>
+    <section
+      id="socialMedia"
+      className="bg-[#1C1C1F] text-white pt-[70px] pb-[65px] space-y-[76px]"
+    >
+      <h1 className="text-[40px] font-Black px-[30px]">R.</h1>
+      <SocialGrid />
+      <SocialHeading />
     </section>
   );
 }

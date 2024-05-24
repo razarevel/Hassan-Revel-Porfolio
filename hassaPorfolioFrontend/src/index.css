@@ -133,3 +133,9 @@
 .review-btn {
   z-index: 20 !important;
 }
+.insta-bg {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/instagram-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
