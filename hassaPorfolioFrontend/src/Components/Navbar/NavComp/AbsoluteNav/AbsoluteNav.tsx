@@ -103,7 +103,7 @@ export default function AbsoluteNav() {
       {/* asdad */}
 
       <div
-        className="flex items-center space-x-[2vh] relative z-20  text-white lg:px-[9vh]"
+        className="flex items-center justify-end space-x-[2vh] relative z-20  text-white lg:px-[9vh] bg-heavyBlue"
         onClick={() => subsForms && setSubsForm(false)}
       >
         <div className="flex items-center space-x-[1.5vh]">
