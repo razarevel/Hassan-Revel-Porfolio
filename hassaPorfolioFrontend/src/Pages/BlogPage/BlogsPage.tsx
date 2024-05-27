@@ -1,5 +1,6 @@
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
+import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
 import BlogsGrid from "./BlogsComp/BlogGrid/BlogsGrid";
 import BlogsFirst from "./BlogsComp/BlogsFirst";
@@ -26,6 +27,7 @@ export default function BlogsPage() {
         <BlogsPaginate />
         <FooterMain />
       </div>
+      <ScrollToTop />
     </section>
   );
 }

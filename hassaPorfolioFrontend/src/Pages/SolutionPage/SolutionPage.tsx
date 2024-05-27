@@ -1,5 +1,6 @@
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
+import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
 import SolGrid from "./SolutionComp/SolGrid";
 import SolHero from "./SolutionComp/SolHero";
@@ -21,6 +22,7 @@ export default function SolutionPage() {
         <SolGrid />
         <FooterMain />
       </div>
+      <ScrollToTop />
     </section>
   );
 }

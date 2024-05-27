@@ -139,3 +139,10 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.blog-img {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/mp-vlog-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(2);
+}

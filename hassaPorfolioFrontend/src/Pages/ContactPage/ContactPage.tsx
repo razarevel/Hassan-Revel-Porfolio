@@ -1,5 +1,6 @@
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
+import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
 import ContactForm from "./ContactComp/ContactForm";
 
@@ -17,6 +18,7 @@ export default function ContactPage() {
         <ContactForm />
         <FooterMain />
       </div>
+      <ScrollToTop />
     </section>
   );
 }

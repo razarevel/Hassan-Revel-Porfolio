@@ -1,5 +1,6 @@
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
+import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
 import AboutHeroLg from "./AboutComp/AboutHero/AboutHeroLg";
 import AboutHeroSm from "./AboutComp/AboutHero/AboutHeroSm";
@@ -34,6 +35,7 @@ export default function AboutPage() {
         <AboutSec4 />
         <FooterMain />
       </div>
+      <ScrollToTop />
     </section>
   );
 }
