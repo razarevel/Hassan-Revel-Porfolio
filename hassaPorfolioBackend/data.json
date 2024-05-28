@@ -1,0 +1,38 @@
+[
+  {
+    "img": "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/AI+applications.jpg",
+    "name": "AI applications"
+  },
+  {
+    "img": "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/Large+language+Models.jpg",
+    "name": "Large language Models"
+  },
+  {
+    "img": "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/Prompt+Engineering.jpg",
+    "name": "Prompt Engineering"
+  },
+  {
+    "img": "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/Computer+Vision.jpg",
+    "name": "Computer Vision"
+  },
+  {
+    "img": "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/Natural+language+Processing.jpg",
+    "name": "Natural language Processing"
+  },
+  {
+    "img": "",
+    "name": "Speech Recognition"
+  },
+  {
+    "img": "",
+    "name": "Time Series Analysis and Forecasting"
+  },
+  {
+    "img": "",
+    "name": "Algorithmic Trading"
+  },
+  {
+    "img": "",
+    "name": "Recommender Systems"
+  }
+]
