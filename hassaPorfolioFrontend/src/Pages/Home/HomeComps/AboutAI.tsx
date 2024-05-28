@@ -53,14 +53,10 @@ export default function AboutAI() {
             </h1>
             <p className={fontStyle}>{para[2]}</p>
             <div className="w-full py-[40px] flex items-center justify-center lg:justify-end lg:max-w-[48.625vw]">
-              <Link
-                to={"https://www.linkedin.com/in/hassanrevel"}
-                target="_blank"
-                className="w-full max-w-[300px]"
-              >
+              <Link to="/contact" className="w-full max-w-[300px]">
                 {" "}
                 <div className="text-center bg-white text-black uppercase text-[14px] py-[22px] font-Bold hover:bg-heavyBlue duration-300 hover:text-white w-full">
-                  Visit Hassan. linkedin
+                  Contact Revel
                 </div>{" "}
               </Link>
             </div>

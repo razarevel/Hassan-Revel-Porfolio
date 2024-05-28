@@ -5,7 +5,7 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="relative pb-[5.438vw] pt-[56px] lg:pt-[5vw] "
+      className="relative pb-[5.438vw] pt-[56px] lg:pt-[1vw] "
     >
       <div className="w-full h-full  absolute top-0 left-0 z-10 select-none ">
         <img

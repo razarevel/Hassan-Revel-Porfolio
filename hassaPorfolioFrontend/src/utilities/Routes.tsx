@@ -6,6 +6,7 @@ import PortfolioPage from "../Pages/Portfolio";
 import BlogsPage from "../Pages/BlogPage/BlogsPage";
 import VlogsPage from "../Pages/VlogsPage";
 import ContactPage from "../Pages/ContactPage/ContactPage";
+import Success from "../Pages/SuccessPage/Success";
 const router = createBrowserRouter([
   { path: "/", element: <HomePage /> },
   { path: "/about", element: <AboutPage /> },
@@ -14,5 +15,6 @@ const router = createBrowserRouter([
   { path: "/blogs", element: <BlogsPage /> },
   { path: "/vlogs", element: <VlogsPage /> },
   { path: "/contact", element: <ContactPage /> },
+  { path: "/success", element: <Success /> },
 ]);
 export default router;

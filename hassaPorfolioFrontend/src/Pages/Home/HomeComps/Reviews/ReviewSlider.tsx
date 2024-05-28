@@ -27,7 +27,10 @@ export default function ReviewSlider() {
     return 1;
   };
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden md:max-w-[90vw] lg:max-w-[80vw] mx-auto space-y-[36px] lg:space-y-[3vw]">
+      <h1 className="text-[44px] lg:text-[3vw] text-center font-Black text-heavyBlue px-[16px]">
+        Reviews
+      </h1>
       <Swiper
         spaceBetween={50}
         slidesPerView={sliderPerViews(windowWidth)}
@@ -37,7 +40,7 @@ export default function ReviewSlider() {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        className="md:max-w-[90vw] lg:max-w-[80vw] relative my-swiper"
+        className=" relative my-swiper"
       >
         {[...Array(6)].map((_, index) => (
           <SwiperSlide key={index} className="px-[16px] select-none relative">

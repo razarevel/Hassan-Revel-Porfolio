@@ -5,6 +5,7 @@ export default function NavDeskList1() {
   const context = [
     { text: "About", link: "/about" },
     { text: "Solutions", link: "/solutions" },
+    { text: "Blogs", link: "/blogs" },
   ];
   const { setSubsFixForm } = useZustand();
   return (
@@ -22,29 +23,7 @@ export default function NavDeskList1() {
               <Link to={el.link}>{el.text}</Link>
             </div>
           ))}
-          <div className="relative group cursor-pointer hover:text-heavyBlue duration-300">
-            <p>Media</p>
-            <div className="absolute duration-300 flex items-center text-[1.6vh] space-x-4 h-0 overflow-hidden group-hover:h-[8vh] nav-bg">
-              {/* border */}
-              <div className="w-0.5 h-[10vh] bg-heavyBlue"></div>
-              {/* context */}
-              <div className="space-y-2 py-10 pr-4">
-                <div>
-                  <Link to="/blogs">
-                    <p>Blogs</p>
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    to="https://www.youtube.com/@hassanrevel"
-                    target="_blank"
-                  >
-                    <p>VLOGS</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div className="hover:text-heavyBlue duration-300">
             <Link to={"/contact"}>Contact</Link>
           </div>

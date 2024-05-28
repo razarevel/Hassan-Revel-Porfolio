@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import BlogSecGrid from "./BlogSecGrid";
 
 export default function BlogSec() {
   const linkContext = [
@@ -29,6 +30,7 @@ export default function BlogSec() {
       return "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/images/blogsImglg.jpg";
     return "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/images/blogsImg.jpg";
   };
+
   return (
     <section id="blogSec" className="my-[56px] lg:my-[6.6vw]">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center w-full">
@@ -51,7 +53,10 @@ export default function BlogSec() {
               </Link>
             </div>
             <div className="w-[50%]">
-              <a href={linkContext[1].link}>
+              <a
+                href={linkContext[1].link}
+                
+              >
                 <div className="text-[11px] sm:text-[14px]  font-SemiBold py-[18px] px-[8px] text-center uppercase lg:text-[0.875vw] review-border text-black   hero-btn-border lg:px-0 lg:w-[12.5vw] lg:py-[1.313vw] hover:bg-darkBlue hover:text-white duration-300">
                   {linkContext[1].text}
                 </div>
@@ -64,6 +69,7 @@ export default function BlogSec() {
           <img src={imgFn(windowWidth)} alt="" className="w-full" />
         </div>
       </div>
+      <BlogSecGrid />
     </section>
   );
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function SolutionSec() {
   const context = {
     img: "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/AI+applications.jpg",
@@ -29,6 +31,13 @@ export default function SolutionSec() {
           ))}
         </div>
         {/* gird */}
+        <div className="w-full flex justify-end items-end max-w-[95vw]">
+          <Link to={"/solutions"}>
+            <div className="review-border duration-300 text-heavyBlue hover:bg-heavyBlue hover:text-white font-SemiBold uppercase text-[14px] py-[22px] text-center relative z-20 w-[220px] h-[58px] bg-transparent flex items-center justify-center cursor-pointer">
+              View more
+            </div>
+          </Link>
+        </div>
       </div>
     </section>
   );
