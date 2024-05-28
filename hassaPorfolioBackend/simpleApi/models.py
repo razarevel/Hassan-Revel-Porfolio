@@ -11,3 +11,4 @@ class solutions(models.Model):
 class blogs(models.Model):
     img = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
+    date = models.DateField(auto_now_add=True)
