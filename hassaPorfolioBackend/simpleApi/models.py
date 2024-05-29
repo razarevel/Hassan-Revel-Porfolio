@@ -20,3 +20,8 @@ class reviews(models.Model):
     name = models.CharField(max_length=255)
     review = models.TextField()
     title = models.CharField(max_length=255, default='Researcher')
+
+class stacks(models.Model):
+    img = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    tag =  models.CharField(max_length=255)
