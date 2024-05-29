@@ -21,7 +21,15 @@ class reviews(models.Model):
     review = models.TextField()
     title = models.CharField(max_length=255, default='Researcher')
 
+
 class stacks(models.Model):
+    stackTags = [
+        ('D', 'Data'),
+        ('DP', 'Data Processing'),
+        ('M', 'Middle'),
+        ('MT', 'Model Training'),
+        ('ECD', 'Edge and Cloud Deployment')
+    ]
     img = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
-    tag =  models.CharField(max_length=255)
+    tag = models.CharField(max_length=5, choices=stackTags)
