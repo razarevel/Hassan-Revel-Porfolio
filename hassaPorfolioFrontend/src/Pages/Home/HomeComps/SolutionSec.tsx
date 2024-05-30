@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import axios from "axios";
+interface Solution {
+  id: number;
+  img: string;
+  name: string;
+}
 export default function SolutionSec() {
-  const context = {
-    img: "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/solutionImg/AI+applications.jpg",
-    text: "AI applications",
-  };
+  const [solution, setSolution] = useState<Solution[]>([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/solutions/?page=1")
+      .then((res) => setSolution(res.data.results));
+  });
   return (
     <section id="solutionSec">
       <div className="px-[30px] lg:px-[6.6vw] my-[56px] lg:my-[6.6vw] space-y-[34px] lg:space-y-[5.6vw]">
@@ -13,20 +21,12 @@ export default function SolutionSec() {
           Solution
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-[5vw]">
-          {[...Array(6)].map((_, index) => (
-            <div key={index} className="w-full space-y-4">
-              <div className="w-full overflow-hidden rounded-lg">
-                <img
-                  src={context.img}
-                  alt=""
-                  className="w-full hover:scale-105 duration-300"
-                />
-              </div>
-              <div>
-                <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue px-[10px] lg:px-[1vw]">
-                  {context.text}
-                </h1>
-              </div>
+          {solution.map((el: Solution, index) => (
+            <div key={index} className="space-y-5">
+              <img src={el.img} alt="" />
+              <h1 className="font-Bold text-[24px] lg:text-[2vw] text-darkBlue">
+                {el.name}
+              </h1>
             </div>
           ))}
         </div>

@@ -1,6 +1,19 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import Cards from "../Home/HomeComps/Reviews/Cards";
-
+interface Reviews {
+  name: string;
+  img: string;
+  review: string;
+  title: string;
+}
 export default function SuccessGrid() {
+  const [reviews, setreviews] = useState<Reviews[]>([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/solutions/?page=1")
+      .then((res) => setreviews(res.data.results));
+  });
   return (
     <section
       id="successGrid"
@@ -17,8 +30,14 @@ export default function SuccessGrid() {
         className="absolute w-full h-[70%] top-0 left-0"
       />
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-[3vw] px-[4vw] mx-auto relative z-20">
-        {[...Array(6)].map((_, index) => (
-          <Cards key={index} />
+        {reviews.map((el: Reviews, index) => (
+          <Cards
+          key={index}
+            name={el.name}
+            img={el.img}
+            review={el.review}
+            title={el.title}
+          />
         ))}
       </div>
 

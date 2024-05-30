@@ -5,6 +5,14 @@ import "swiper/css";
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
+import useApiCall from "../../../../utilities/useApiCall";
+
+interface Reviews {
+  name: string;
+  img: string;
+  review: string;
+  title: string;
+}
 export default function ReviewSlider() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -26,6 +34,7 @@ export default function ReviewSlider() {
     if (width < 1024 && width >= 768) return 2;
     return 1;
   };
+  const reviews = useApiCall("reviews");
   return (
     <div className="relative w-full overflow-hidden md:max-w-[90vw] lg:max-w-[80vw] mx-auto space-y-[36px] lg:space-y-[3vw]">
       <h1 className="text-[44px] lg:text-[3vw] text-center font-Black text-heavyBlue px-[16px]">
@@ -42,9 +51,14 @@ export default function ReviewSlider() {
         }}
         className=" relative my-swiper"
       >
-        {[...Array(6)].map((_, index) => (
+        {reviews.map((el: Reviews, index: any) => (
           <SwiperSlide key={index} className="px-[16px] select-none relative">
-            <Cards />
+            <Cards
+              name={el.name}
+              img={el.img}
+              review={el.review}
+              title={el.title}
+            />
           </SwiperSlide>
         ))}
         <div className="w-[20vw] h-full absolute top-0 left-[-20vw] bg-white z-30"></div>
