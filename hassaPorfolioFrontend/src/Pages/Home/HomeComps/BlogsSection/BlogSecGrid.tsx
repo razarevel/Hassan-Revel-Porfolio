@@ -1,4 +1,5 @@
-import useApiCall from "../../../../utilities/useApiCall";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 interface Blogs {
   id: number;
@@ -8,11 +9,17 @@ interface Blogs {
   date: string;
 }
 export default function BlogSecGrid() {
-  const { results } = useApiCall("blogs", 1);
+  // const { results } = useApiCall("blogs", 1);
+  const [blogs, setBlogs] = useState<Blogs[]>([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/blogs/?page=1")
+      .then((res) => setBlogs(res.data.results));
+  }, []);
   return (
     <>
       <div className="grid grid-cols-2 lg:flex gap-10 mt-[5vw] px-[16px] lg:p-0">
-        {results.map((el: Blogs, index: any) => (
+        {blogs.map((el: Blogs, index: any) => (
           <div key={index} className="w-full space-y-4 cursor-pointer">
             <div className="w-full overflow-hidden rounded-lg">
               <img

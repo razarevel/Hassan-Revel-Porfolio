@@ -20,8 +20,8 @@ export default function SocialGrid() {
     <section id="socialGrid" className="">
       <div className="space-y-20  text-black max-w-[280px] mx-auto lg:flex lg:max-w-[92.375vw] lg:space-y-0 lg:space-x-[1vw]">
         {socialContext.map((el, index) => (
-          <div className={`lg:w-full  ${customMT[index]}`}>
-            <Link to={el.link} key={index} target="_blank">
+          <div className={`lg:w-full  ${customMT[index]}`} key={index}>
+            <Link to={el.link} target="_blank">
               <div className="bg-white relative flex flex-col items-center justify-start lg:w-full lg:h-[23.938vw]">
                 <div className="absolute bottom-[-16px]  bg-white w-[33px] h-[33px] lg:w-[2.75vw] lg:h-[2.75vw] lg:bottom-[-1vw]  rotate-45"></div>
                 {/* img */}

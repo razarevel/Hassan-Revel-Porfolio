@@ -5,7 +5,7 @@ import "swiper/css";
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
-import useApiCall from "../../../../utilities/useApiCall";
+import axios from "axios";
 
 interface Reviews {
   name: string;
@@ -34,7 +34,12 @@ export default function ReviewSlider() {
     if (width < 1024 && width >= 768) return 2;
     return 1;
   };
-  const reviews = useApiCall("reviews");
+  const [reviews, setReviews] = useState<Reviews[]>([]);
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/reviews")
+      .then((res) => setReviews(res.data));
+  }, []);
   return (
     <div className="relative w-full overflow-hidden md:max-w-[90vw] lg:max-w-[80vw] mx-auto space-y-[36px] lg:space-y-[3vw]">
       <h1 className="text-[44px] lg:text-[3vw] text-center font-Black text-heavyBlue px-[16px]">
