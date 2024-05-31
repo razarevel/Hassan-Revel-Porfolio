@@ -2,7 +2,7 @@ import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
-import SolGrid from "./SolutionComp/SolGrid";
+import PaginatedGrid from "../PaginatedGrid";
 import SolHero from "./SolutionComp/SolHero";
 import SolutionHeading from "./SolutionComp/SolutionHeading";
 
@@ -19,7 +19,8 @@ export default function SolutionPage() {
       >
         <SolHero />
         <SolutionHeading />
-        <SolGrid />
+        {/* <SolGrid /> */}
+        <PaginatedGrid api="solutions" />
         <FooterMain />
       </div>
       <ScrollToTop />

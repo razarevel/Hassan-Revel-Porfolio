@@ -15,7 +15,7 @@ export default function HomeHero() {
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-[44.81%] lg:order-2 relative">
           <img
-            src="https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.png"
+            src="https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.jpg"
             alt=""
             className="w-full "
           />

@@ -1,5 +1,5 @@
 export default function SuccessHero() {
-  const img = `https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.png`;
+  const img = `https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.jpg`;
   return (
     <section id="successHero">
       <div className="flex flex-col lg:flex-row">

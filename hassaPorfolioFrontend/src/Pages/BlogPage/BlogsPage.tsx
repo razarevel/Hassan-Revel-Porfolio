@@ -2,11 +2,11 @@ import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import useZustand from "../../utilities/zustand";
-import BlogsGrid from "./BlogsComp/BlogGrid/BlogsGrid";
+import PaginatedGrid from "../PaginatedGrid";
 import BlogsFirst from "./BlogsComp/BlogsFirst";
+import BlogsHeading from "./BlogsComp/BlogsHeading";
 import BlogsHeroLG from "./BlogsComp/BlogsHero/BlogsHeroLG";
 import BlogsHeroSM from "./BlogsComp/BlogsHero/BlogsHeroSM";
-import BlogsPaginate from "./BlogsComp/BlogsPaginate";
 
 export default function BlogsPage() {
   const { setSubsFixForm, setSubsForm } = useZustand();
@@ -23,8 +23,8 @@ export default function BlogsPage() {
         <BlogsHeroSM />
         <BlogsHeroLG />
         <BlogsFirst />
-        <BlogsGrid />
-        <BlogsPaginate />
+        <BlogsHeading />
+        <PaginatedGrid api="blogs" />
         <FooterMain />
       </div>
       <ScrollToTop />

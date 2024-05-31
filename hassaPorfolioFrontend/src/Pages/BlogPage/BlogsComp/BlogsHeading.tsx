@@ -3,7 +3,7 @@ import { FaChevronLeft } from "react-icons/fa";
 export default function BlogsHeading() {
   return (
     <>
-      <div className="space-y-[36px] md:space-y-0 md:flex items-center justify-between">
+      <div className="space-y-[36px] md:space-y-0 md:flex items-center justify-between px-[16px] md:px-[32px] lg:px-[6.6vw] my-[56px] lg:my-[6.6vw]">
         <h1 className="text-darkBlue text-[2em] font-Bold">
           Latest Blog Posts
         </h1>

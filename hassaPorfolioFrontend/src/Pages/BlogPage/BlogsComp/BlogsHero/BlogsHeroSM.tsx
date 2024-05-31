@@ -1,7 +1,7 @@
 export default function BlogsHeroSM() {
   const para = `I give a funny, inspirational, and behind-the-scenes look into my entire day from early morning to late night, juggling work and personal life as an AI Engineer creating innovative solutions for my clients`;
   const img =
-    "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.png";
+    "https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/blogsImages/Blogphoto1.jpg";
   return (
     <section id="hero" className="lg:hidden">
       <div className="relative flex flex-col justify-center">
