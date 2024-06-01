@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f=^*(&ybwj=(7mh$5$a-v*j4p5m4afli6fmol8ua0703=bkvxt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,7 +83,8 @@ DATABASES = {
         'NAME': 'hassanRevel',
         "HOST": "hassan-revel.ciygtuk2oij0.eu-west-2.rds.amazonaws.com",
         "USER": "admin",
-        "PASSWORD": "revel123"
+        "PASSWORD": "revel123",
+        "PORT": "3306"
     }
 }
 
@@ -131,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False,
-    
+
 }
 
 CORS_ALLOWED_ORIGINS = [
