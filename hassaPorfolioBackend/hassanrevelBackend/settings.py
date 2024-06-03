@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'hassanrevelBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hassanRevel',
-        "HOST": "hassan-revel.ciygtuk2oij0.eu-west-2.rds.amazonaws.com",
-        "USER": "admin",
-        "PASSWORD": "revel123",
-        "PORT": "3306"
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        "HOST": "database-1.ciygtuk2oij0.eu-west-2.rds.amazonaws.com",
+        "USER": "revel",
+        "PASSWORD": "Aliraza2022",
+        "PORT": "5432"
     }
 }
 

@@ -39,7 +39,7 @@ def get_solutions(request):
 
 @api_view()
 def get_blogs(request):
-    blogs_query = blogs.objects.all()
+    blogs_query = blogs.objects.all().order_by('-date')
     url_contains_page = '?page' in request.build_absolute_uri()
     if url_contains_page:
         paginator = PageNumberPagination()
