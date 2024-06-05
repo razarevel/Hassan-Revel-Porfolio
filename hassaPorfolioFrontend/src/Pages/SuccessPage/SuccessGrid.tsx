@@ -11,7 +11,7 @@ export default function SuccessGrid() {
   const [reviews, setreviews] = useState<Reviews[]>([]);
   useEffect(() => {
     axios
-      .get("https://api.hassanrevel.com/api/reviews")
+      .get("http://127.0.0.1:8000/api/reviews")
       .then((res) => setreviews(res.data));
   });
   return (
