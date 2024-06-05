@@ -13,7 +13,7 @@ export default function BlogSecGrid() {
   const [blogs, setBlogs] = useState<Blogs[]>([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/blogs/?page=1")
+      .get("https://api.hassanrevel.com/api/blogs/?page=1")
       .then((res) => setBlogs(res.data.results));
   }, []);
   return (
