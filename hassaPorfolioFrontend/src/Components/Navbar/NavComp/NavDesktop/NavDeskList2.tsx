@@ -1,6 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import FooterList3 from "../../../Footer/FooterComp/FooterList3";
 import useZustand from "../../../../utilities/zustand";
 export default function NavDeskList2() {
   const context = [

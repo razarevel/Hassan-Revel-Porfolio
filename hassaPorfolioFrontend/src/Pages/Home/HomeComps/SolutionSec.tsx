@@ -10,7 +10,7 @@ export default function SolutionSec() {
   const [solution, setSolution] = useState<Solution[]>([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/solutions/?page=1")
+      .get("https://api.hassanrevel.com/api/solutions/?page=1")
       .then((res) => setSolution(res.data.results));
   });
   return (

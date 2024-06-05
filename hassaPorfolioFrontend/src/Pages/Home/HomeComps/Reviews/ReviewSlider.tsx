@@ -37,7 +37,7 @@ export default function ReviewSlider() {
   const [reviews, setReviews] = useState<Reviews[]>([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/reviews")
+      .get("https://api.hassanrevel.com/api/reviews")
       .then((res) => setReviews(res.data));
   }, []);
   return (

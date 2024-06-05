@@ -22,7 +22,7 @@ export default function ContactForm() {
     setFlags([...filtered, ...countries]);
   };
 
-  const keyCapture = useCallback(
+  const keyCapture:any = useCallback(
     (event: React.KeyboardEvent) => {
       const keyPressed = event.key.toLocaleLowerCase();
       if (/^[a-z]$/.test(keyPressed)) {

@@ -11,8 +11,8 @@ export default function SuccessGrid() {
   const [reviews, setreviews] = useState<Reviews[]>([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/solutions/?page=1")
-      .then((res) => setreviews(res.data.results));
+      .get("https://api.hassanrevel.com/api/reviews")
+      .then((res) => setreviews(res.data));
   });
   return (
     <section
@@ -32,7 +32,7 @@ export default function SuccessGrid() {
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-[3vw] px-[4vw] mx-auto relative z-20">
         {reviews.map((el: Reviews, index) => (
           <Cards
-          key={index}
+            key={index}
             name={el.name}
             img={el.img}
             review={el.review}

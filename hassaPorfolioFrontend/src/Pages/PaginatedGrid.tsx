@@ -21,7 +21,7 @@ export default function PaginatedGrid({ api }: Props) {
   const [count, setCount] = useState<number>(1);
   const [maxCount, SetMaxCounts] = useState<number>(0);
   const url =
-    "http://127.0.0.1:8000/api/" +
+    "https://api.hassanrevel.com/api/" +
     api.toString() +
     "/?page=" +
     count.toString();
