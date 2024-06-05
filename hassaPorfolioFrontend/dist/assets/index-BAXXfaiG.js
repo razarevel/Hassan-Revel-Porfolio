@@ -21573,7 +21573,7 @@ function bb() {
   const [e, t] = E.useState([]);
   return (
     E.useEffect(() => {
-      he.get("http://127.0.0.1:8000/blogs/?page=1").then((n) =>
+      he.get("http://127.0.0.1:8000/api/blogs/?page=1").then((n) =>
         t(n.data.results)
       );
     }, []),
@@ -26100,7 +26100,7 @@ function oN() {
     [r, i] = E.useState([]);
   return (
     E.useEffect(() => {
-      he.get("http://127.0.0.1:8000/reviews").then((s) => i(s.data));
+      he.get("http://127.0.0.1:8000/api/reviews").then((s) => i(s.data));
     }, []),
     f.jsxs("div", {
       className:
@@ -26336,7 +26336,7 @@ function fN() {
   const [e, t] = E.useState([]);
   return (
     E.useEffect(() => {
-      he.get("http://127.0.0.1:8000/solutions/?page=1").then((n) =>
+      he.get("http://127.0.0.1:8000/api/solutions/?page=1").then((n) =>
         t(n.data.results)
       );
     }),
@@ -26985,7 +26985,7 @@ function w1({ api: e }) {
   const [t, n] = E.useState([]),
     [r, i] = E.useState(1),
     [s, o] = E.useState(0),
-    a = "http://127.0.0.1:8000/" + e.toString() + "/?page=" + r.toString();
+    a = "http://127.0.0.1:8000/api/" + e.toString() + "/?page=" + r.toString();
   E.useEffect(() => {
     he.get(a).then((c) => {
       n(c.data.results), l(c.data.count, 6);
@@ -29402,7 +29402,7 @@ function ON() {
   const [e, t] = E.useState([]);
   return (
     E.useEffect(() => {
-      he.get("http://127.0.0.1:8000/reviews").then((n) => t(n.data));
+      he.get("http://127.0.0.1:8000/api/reviews").then((n) => t(n.data));
     }),
     f.jsxs("section", {
       id: "successGrid",

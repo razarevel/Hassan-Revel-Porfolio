@@ -21,7 +21,10 @@ export default function PaginatedGrid({ api }: Props) {
   const [count, setCount] = useState<number>(1);
   const [maxCount, SetMaxCounts] = useState<number>(0);
   const url =
-    "http://127.0.0.1:8000/" + api.toString() + "/?page=" + count.toString();
+    "http://127.0.0.1:8000/api/" +
+    api.toString() +
+    "/?page=" +
+    count.toString();
   useEffect(() => {
     axios.get(url).then((res) => {
       setData(res.data.results);
