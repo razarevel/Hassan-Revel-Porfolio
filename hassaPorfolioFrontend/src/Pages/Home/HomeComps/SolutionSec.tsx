@@ -10,9 +10,12 @@ interface Solution {
 export default function SolutionSec() {
   const [solution, setSolution] = useState<Solution[]>([]);
   const { apiUrl } = useZustand();
-  const url = apiUrl + "/?page=1";
+  const url = apiUrl + "solutions/?page=1";
   useEffect(() => {
-    axios.get(url).then((res) => setSolution(res.data.results));
+    axios
+      .get(url)
+      .then((res) => setSolution(res.data.results))
+      .catch((err) => console.log(err));
   });
   return (
     <section id="solutionSec">

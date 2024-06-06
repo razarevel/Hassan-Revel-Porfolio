@@ -13,7 +13,7 @@ export default function BlogSecGrid() {
   // const { results } = useApiCall("blogs", 1);
   const [blogs, setBlogs] = useState<Blogs[]>([]);
   const { apiUrl } = useZustand();
-  const url = apiUrl + "/?page=1";
+  const url = apiUrl + "blogs/?page=1";
   useEffect(() => {
     axios.get(url).then((res) => setBlogs(res.data.results));
   }, []);
