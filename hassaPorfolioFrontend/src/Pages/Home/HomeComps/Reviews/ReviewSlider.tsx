@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
 import axios from "axios";
+import useZustand from "../../../../utilities/zustand";
 
 interface Reviews {
   name: string;
@@ -35,10 +36,10 @@ export default function ReviewSlider() {
     return 1;
   };
   const [reviews, setReviews] = useState<Reviews[]>([]);
+  const { apiUrl } = useZustand();
+  const url = apiUrl + "reviews";
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/reviews")
-      .then((res) => setReviews(res.data));
+    axios.get(url).then((res) => setReviews(res.data));
   }, []);
   return (
     <div className="relative w-full overflow-hidden md:max-w-[90vw] lg:max-w-[80vw] mx-auto space-y-[36px] lg:space-y-[3vw]">

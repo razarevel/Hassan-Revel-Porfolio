@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import useZustand from "../../../../utilities/zustand";
 
 interface Blogs {
   id: number;
@@ -11,10 +12,10 @@ interface Blogs {
 export default function BlogSecGrid() {
   // const { results } = useApiCall("blogs", 1);
   const [blogs, setBlogs] = useState<Blogs[]>([]);
+  const { apiUrl } = useZustand();
+  const url = apiUrl + "/?page=1";
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/blogs/?page=1")
-      .then((res) => setBlogs(res.data.results));
+    axios.get(url).then((res) => setBlogs(res.data.results));
   }, []);
   return (
     <>

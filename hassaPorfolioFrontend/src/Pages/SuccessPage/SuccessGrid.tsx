@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Cards from "../Home/HomeComps/Reviews/Cards";
+import useZustand from "../../utilities/zustand";
 interface Reviews {
   name: string;
   img: string;
@@ -9,10 +10,10 @@ interface Reviews {
 }
 export default function SuccessGrid() {
   const [reviews, setreviews] = useState<Reviews[]>([]);
+  const { apiUrl } = useZustand();
+  const url = apiUrl + "reviews";
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/reviews")
-      .then((res) => setreviews(res.data));
+    axios.get(url).then((res) => setreviews(res.data));
   });
   return (
     <section

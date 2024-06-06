@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import useZustand from "../utilities/zustand";
 interface Solution {
   id: number;
   img: string;
@@ -17,14 +18,11 @@ interface Props {
   api: string;
 }
 export default function PaginatedGrid({ api }: Props) {
+  const { apiUrl } = useZustand();
   const [data, setData] = useState<Solution[] | Blogs[]>([]);
   const [count, setCount] = useState<number>(1);
   const [maxCount, SetMaxCounts] = useState<number>(0);
-  const url =
-    "http://127.0.0.1:8000/api/" +
-    api.toString() +
-    "/?page=" +
-    count.toString();
+  const url = apiUrl + api.toString() + "/?page=" + count.toString();
   useEffect(() => {
     axios.get(url).then((res) => {
       setData(res.data.results);

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useZustand from "../../../utilities/zustand";
 interface Solution {
   id: number;
   img: string;
@@ -8,10 +9,10 @@ interface Solution {
 }
 export default function SolutionSec() {
   const [solution, setSolution] = useState<Solution[]>([]);
+  const { apiUrl } = useZustand();
+  const url = apiUrl + "/?page=1";
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/api/solutions/?page=1")
-      .then((res) => setSolution(res.data.results));
+    axios.get(url).then((res) => setSolution(res.data.results));
   });
   return (
     <section id="solutionSec">

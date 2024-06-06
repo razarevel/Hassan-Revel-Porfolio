@@ -1,6 +1,7 @@
 import { create } from "zustand";
 interface Props {
   subsForms: boolean;
+  apiUrl: string;
   subsFixForms: boolean;
   setSubsForm: (show: boolean) => void;
   setSubsFixForm: (show: boolean) => void;
@@ -9,6 +10,7 @@ interface Props {
   setInViews: (newArray: [number, number, number]) => void;
 }
 const useZustand = create<Props>((set) => ({
+  apiUrl: "http://127.0.0.1:8000/api/",
   subsForms: false,
   subsFixForms: false,
   setSubsForm: (show: boolean) => set(() => ({ subsForms: show })),
