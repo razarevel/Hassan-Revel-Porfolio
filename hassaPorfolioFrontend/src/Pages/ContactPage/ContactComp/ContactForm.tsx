@@ -22,7 +22,7 @@ export default function ContactForm() {
     setFlags([...filtered, ...countries]);
   };
 
-  const keyCapture:any = useCallback(
+  const keyCapture: any = useCallback(
     (event: React.KeyboardEvent) => {
       const keyPressed = event.key.toLocaleLowerCase();
       if (/^[a-z]$/.test(keyPressed)) {
@@ -41,7 +41,7 @@ export default function ContactForm() {
     }
     return;
   }, [keyCapture, show]);
-  console.log(show);
+
   return (
     <div
       className="lg:flex justify-between mb-[56px] lg:mb-[12vw]"

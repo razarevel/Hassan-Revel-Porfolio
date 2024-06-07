@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function FooterList3() {
   const context = [
@@ -7,15 +8,46 @@ export default function FooterList3() {
     `Updates on my AI solutions`,
   ];
   const [select, setSeleted] = useState<number[]>([]);
+  const [showError, setShowError] = useState(false);
   const checkedBoolean = (index: number) => {
-    if (select.includes(index)) return true;
+    if (select.includes(index)) {
+      return true;
+    }
     return false;
   };
+  const { register, handleSubmit, reset } = useForm();
+  const Data = {
+    aiNews: false,
+    aiTips: false,
+    aiUpdates: false,
+    email: "",
+  };
+
   return (
-    <div className="flex flex-col">
+    <form
+      className="flex flex-col"
+      onSubmit={handleSubmit((data) => {
+        Data.aiNews = select.includes(0);
+        Data.aiTips = select.includes(1);
+        Data.aiUpdates = select.includes(2);
+        Data.email = data.email || "";
+        if ((!Data.aiNews && !Data.aiTips && !Data.aiUpdates) || !Data.email) {
+          setShowError(true);
+          return;
+        }
+        setShowError(false);
+        setSeleted([]);
+        reset();
+      })}
+    >
       <h1 className="mt-[70px] lg:mt-0 text-[25px] lg:text-[1.563vw] leading-[1.3] font-Bold">
         What are you interested In?
       </h1>
+      {showError && (
+        <p className="mx-auto bg-white font-Bold text-center text-[12px] lg:text-[0.750vw]  border-[2px] border-[#790000] text-[#790000] py-[16px] my-[25px] w-full">
+          You have error in your submission. Please review and <br /> try again
+        </p>
+      )}
       {/* checkboxs */}
       <div className="text-[11px] lg:text-[.93vw] space-y-1 lg:space-y-[0.625vw] pt-[1.875vw] ">
         {context.map((el, index) => (
@@ -30,6 +62,7 @@ export default function FooterList3() {
           >
             <div style={{ width: "20px", height: "20px" }}>
               <input
+                {...register(`check${index.toString()}`)}
                 type="checkbox"
                 checked={checkedBoolean(index)}
                 className="w-full h-full cursor-pointer"
@@ -41,7 +74,8 @@ export default function FooterList3() {
       </div>
       {/* input */}
       <input
-        type="text"
+        {...register("email")}
+        type="email"
         placeholder="ENTER YOUR EMAIL ADDRESS"
         className="w-full pl-[10px] lg:pl-[1.25vw] h-[50px] text-[11px] mt-7 lg:h-[3.313vw] lg:text-[0.875vw] leading-normal lg:mt-[1.938vw] text-black focus:outline-none"
       />
@@ -49,6 +83,6 @@ export default function FooterList3() {
       <button className="text-[12px] h-[58px] lg:text-[1vw] lg:h-[3.625vw] lg:max-w-[9.375vw] lg:mt-[1.813vw]  submit-border font-Bold mt-7 duration-300 hover:bg-white hover:text-darkBlue ">
         SUBMIT
       </button>
-    </div>
+    </form>
   );
 }

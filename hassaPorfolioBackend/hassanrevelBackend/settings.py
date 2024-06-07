@@ -137,5 +137,6 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'https://hassanrevel.com',
     'https://hassan-revel-porfolio.vercel.app',
 ]
