@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useZustand from "../../../utilities/zustand";
+import { useQuery } from "@tanstack/react-query";
 interface Solution {
   id: number;
   img: string;
@@ -11,11 +12,14 @@ export default function SolutionSec() {
   const [solution, setSolution] = useState<Solution[]>([]);
   const { apiUrl } = useZustand();
   const url = apiUrl + "solutions/?page=1";
-  useEffect(() => {
-    axios
-      .get(url)
-      .then((res) => setSolution(res.data.results))
-      .catch((err) => console.log(err));
+  const { isLoading } = useQuery({
+    queryKey: ["Solutions"],
+    queryFn: () => {
+      axios
+        .get(url)
+        .then((res) => setSolution(res.data.results))
+        .catch((err) => console.log(err));
+    },
   });
   return (
     <section id="solutionSec">

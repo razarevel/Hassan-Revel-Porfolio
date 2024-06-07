@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import useZustand from "../utilities/zustand";
+import { useQuery } from "@tanstack/react-query";
 interface Solution {
   id: number;
   img: string;
@@ -23,13 +24,15 @@ export default function PaginatedGrid({ api }: Props) {
   const [count, setCount] = useState<number>(1);
   const [maxCount, SetMaxCounts] = useState<number>(0);
   const url = apiUrl + api.toString() + "/?page=" + count.toString();
+  const { isLoading } = useQuery({
+    queryKey: [api, url],
+    queryFn: () =>
+      axios.get(url).then((res) => {
+        setData(res.data.results);
+        calculateTotalPages(res.data.count, 6);
+      }),
+  });
 
-  useEffect(() => {
-    axios.get(url).then((res) => {
-      setData(res.data.results);
-      calculateTotalPages(res.data.count, 6);
-    });
-  }, [count]);
   // for pagination number
   const calculateTotalPages = (
     totalResults: number,
@@ -41,6 +44,7 @@ export default function PaginatedGrid({ api }: Props) {
     }
     return SetMaxCounts(totalPages);
   };
+  console.log(isLoading);
   return (
     <>
       <section

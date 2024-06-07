@@ -45,7 +45,8 @@ export default function FooterList3() {
       </h1>
       {showError && (
         <p className="mx-auto bg-white font-Bold text-center text-[12px] lg:text-[0.750vw]  border-[2px] border-[#790000] text-[#790000] py-[16px] my-[25px] w-full">
-          You have error in your submission. Please review and <br /> try again
+          You have error in your submission. Please review and{" "}
+          <br className="hidden lg:block" /> try again
         </p>
       )}
       {/* checkboxs */}

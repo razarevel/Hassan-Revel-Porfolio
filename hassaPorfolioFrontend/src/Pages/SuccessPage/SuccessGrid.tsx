@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Cards from "../Home/HomeComps/Reviews/Cards";
 import useZustand from "../../utilities/zustand";
+import { useQuery } from "@tanstack/react-query";
 interface Reviews {
   name: string;
   img: string;
@@ -12,8 +13,14 @@ export default function SuccessGrid() {
   const [reviews, setreviews] = useState<Reviews[]>([]);
   const { apiUrl } = useZustand();
   const url = apiUrl + "reviews";
-  useEffect(() => {
-    axios.get(url).then((res) => setreviews(res.data));
+  const { isLoading } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: () => {
+      axios
+        .get(url)
+        .then((res) => setreviews(res.data))
+        .catch((err) => console.log(err));
+    },
   });
   return (
     <section

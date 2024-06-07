@@ -7,6 +7,7 @@ import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
 import axios from "axios";
 import useZustand from "../../../../utilities/zustand";
+import { useQuery } from "@tanstack/react-query";
 
 interface Reviews {
   name: string;
@@ -38,9 +39,15 @@ export default function ReviewSlider() {
   const [reviews, setReviews] = useState<Reviews[]>([]);
   const { apiUrl } = useZustand();
   const url = apiUrl + "reviews";
-  useEffect(() => {
-    axios.get(url).then((res) => setReviews(res.data));
-  }, []);
+  const { isLoading } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: () => {
+      axios
+        .get(url)
+        .then((res) => setReviews(res.data))
+        .catch((err) => console.log(err));
+    },
+  });
   return (
     <div className="relative w-full overflow-hidden md:max-w-[90vw] lg:max-w-[80vw] mx-auto space-y-[36px] lg:space-y-[3vw]">
       <h1 className="text-[44px] lg:text-[3vw] text-center font-Black text-heavyBlue px-[16px]">

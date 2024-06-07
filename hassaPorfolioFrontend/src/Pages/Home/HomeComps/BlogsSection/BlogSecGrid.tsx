@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import useZustand from "../../../../utilities/zustand";
+import { useQuery } from "@tanstack/react-query";
 
 interface Blogs {
   id: number;
@@ -14,9 +15,15 @@ export default function BlogSecGrid() {
   const [blogs, setBlogs] = useState<Blogs[]>([]);
   const { apiUrl } = useZustand();
   const url = apiUrl + "blogs/?page=1";
-  useEffect(() => {
-    axios.get(url).then((res) => setBlogs(res.data.results));
-  }, []);
+  const { isLoading } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: () => {
+      axios
+        .get(url)
+        .then((res) => setBlogs(res.data.results))
+        .catch((err) => console.log(err));
+    },
+  });
   return (
     <>
       <div className="grid grid-cols-2 lg:flex gap-10 mt-[5vw] px-[16px] lg:p-0">
