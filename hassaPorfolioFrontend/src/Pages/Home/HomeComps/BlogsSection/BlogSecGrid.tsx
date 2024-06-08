@@ -11,7 +11,6 @@ interface Blogs {
   date: string;
 }
 export default function BlogSecGrid() {
-  // const { results } = useApiCall("blogs", 1);
   const [blogs, setBlogs] = useState<Blogs[]>([]);
   const { apiUrl } = useZustand();
   const url = apiUrl + "blogs/?page=1";
@@ -27,25 +26,33 @@ export default function BlogSecGrid() {
   return (
     <>
       <div className="grid grid-cols-2 lg:flex gap-10 mt-[5vw] px-[16px] lg:p-0">
-        {blogs.map((el: Blogs, index: any) => (
-          <div key={index} className="w-full space-y-4 cursor-pointer">
-            <div className="w-full overflow-hidden rounded-lg">
-              <img
-                src={el.img}
-                alt=""
-                className="w-full hover:scale-105 duration-300"
-              />
-            </div>
-            <div>
-              {/* <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue">
+        {isLoading &&
+          [...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="w-full h-[100px] lg:h-[16vw] rounded-lg overflow-hidden relative card-is-loading"
+            ></div>
+          ))}
+        {!isLoading &&
+          blogs.map((el: Blogs, index: any) => (
+            <div key={index} className="w-full space-y-4 cursor-pointer">
+              <div className="w-full overflow-hidden rounded-lg">
+                <img
+                  src={el.img}
+                  alt=""
+                  className="w-full hover:scale-105 duration-300"
+                />
+              </div>
+              <div>
+                {/* <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue">
                 {el.name}
               </h1> */}
-              {/* <p className="text-[10px] lg:text-[1vw] opacity-70">
+                {/* <p className="text-[10px] lg:text-[1vw] opacity-70">
                 {blogContext.date}
               </p> */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );

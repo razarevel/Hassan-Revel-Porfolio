@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import useZustand from "../utilities/zustand";
 import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 interface Solution {
   id: number;
   img: string;
@@ -52,25 +53,33 @@ export default function PaginatedGrid({ api }: Props) {
         className="px-[16px] md:px-[32px] lg:px-[6.6vw] my-[56px] lg:my-[6.6vw]"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-[2.5vw]">
-          {data.map((el, index: number) => (
-            <div key={index} className="w-full space-y-4">
-              <div className="w-full overflow-hidden rounded-lg">
-                <img
-                  src={el.img}
-                  alt=""
-                  className="w-full hover:scale-105 duration-300"
-                />
+          {isLoading &&
+            [...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="w-full  h-[300px] lg:h-[16vw] rounded-lg overflow-hidden relative card-is-loading "
+              ></div>
+            ))}
+          {!isLoading &&
+            data.map((el, index: number) => (
+              <div key={index} className="w-full space-y-4">
+                <div className="w-full overflow-hidden rounded-lg cursor-pointer group">
+                  <img
+                    src={el.img}
+                    alt=""
+                    className="w-full group-hover:scale-105 duration-300"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue">
+                    {el.name}
+                  </h1>
+                  <p className="text-[10px] lg:text-[1vw] opacity-70">
+                    {el.date}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue">
-                  {el.name}
-                </h1>
-                <p className="text-[10px] lg:text-[1vw] opacity-70">
-                  {el.date}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
         {/* btn */}
         <div className="px-[16px] sm:px-[30px] lg:px-[5.125vw] my-[56px] flex items-center justify-between lg:max-w-[35vw] mx-auto ">

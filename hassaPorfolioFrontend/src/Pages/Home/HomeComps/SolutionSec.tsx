@@ -29,14 +29,22 @@ export default function SolutionSec() {
           Solution
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-[5vw]">
-          {solution.map((el: Solution, index) => (
-            <div key={index} className="space-y-5">
-              <img src={el.img} alt="" />
-              <h1 className="font-Bold text-[24px] lg:text-[2vw] text-darkBlue">
-                {el.name}
-              </h1>
-            </div>
-          ))}
+          {isLoading &&
+            [...Array(6)].map((_, index) => (
+              <div
+                key={index}
+                className="w-full  h-[300px] lg:h-[16vw] rounded-lg overflow-hidden relative card-is-loading"
+              ></div>
+            ))}
+          {!isLoading &&
+            solution.map((el: Solution, index) => (
+              <div key={index} className="space-y-5">
+                <img src={el.img} alt="" />
+                <h1 className="font-Bold text-[24px] lg:text-[2vw] text-darkBlue">
+                  {el.name}
+                </h1>
+              </div>
+            ))}
         </div>
         {/* gird */}
         <div className="w-full flex justify-end items-end max-w-[95vw]">
