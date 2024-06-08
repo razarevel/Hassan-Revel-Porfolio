@@ -137,6 +137,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'http://frontend-lgb-hassan-1100889052.eu-west-2.elb.amazonaws.com',
+    'https://frontend-lgb-hassan-1100889052.eu-west-2.elb.amazonaws.com',
     'https://hassanrevel.com',
-    'https://hassan-revel-porfolio.vercel.app',
 ]

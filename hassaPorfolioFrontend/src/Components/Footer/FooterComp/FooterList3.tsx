@@ -1,5 +1,14 @@
+import { useMutation, useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import useZustand from "../../../utilities/zustand";
+interface Data {
+  aiNews: boolean;
+  aiTips: boolean;
+  aiUpdates: boolean;
+  email: string;
+}
 
 export default function FooterList3() {
   const context = [
@@ -9,6 +18,7 @@ export default function FooterList3() {
   ];
   const [select, setSeleted] = useState<number[]>([]);
   const [showError, setShowError] = useState(false);
+  const { apiUrl } = useZustand();
   const checkedBoolean = (index: number) => {
     if (select.includes(index)) {
       return true;
@@ -22,7 +32,8 @@ export default function FooterList3() {
     aiUpdates: false,
     email: "",
   };
-
+  const url = apiUrl + "subscribe/";
+  const mutation = useMutation((data: Data) => axios.put(url, data));
   return (
     <form
       className="flex flex-col"
@@ -35,9 +46,12 @@ export default function FooterList3() {
           setShowError(true);
           return;
         }
-        setShowError(false);
-        setSeleted([]);
-        reset();
+        mutation.mutate(Data);
+        if (!mutation.isLoading) {
+          setShowError(false);
+          setSeleted([]);
+          reset();
+        }
       })}
     >
       <h1 className="mt-[70px] lg:mt-0 text-[25px] lg:text-[1.563vw] leading-[1.3] font-Bold">

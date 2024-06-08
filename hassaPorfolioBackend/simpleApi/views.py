@@ -2,8 +2,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.pagination import PageNumberPagination
 
-from .serializes import SolutionSerializer, BlogSerializer, ReviewSerializer, StackSerializer
-from .models import solutions, blogs, reviews, stacks
+from .serializes import SolutionSerializer, BlogSerializer, ReviewSerializer, StackSerializer, subcriberSerializer, messageSerializer
+from .models import solutions, blogs, reviews, stacks, subscriber, messages
 # Create your views here
 
 
@@ -88,3 +88,32 @@ def get_stacks(request):
     data = stacks.objects.all()
     serializer = StackSerializer(data, many=True)
     return Response(serializer.data)
+
+
+@api_view(['PUT'])
+def post_subscribers(request):
+    email = request.data.get('email')
+    try:
+        subscriber_instance = subscriber.objects.get(email=email)
+        # If the subscriber exists, update the instance with new data
+        serializer = subcriberSerializer(
+            subscriber_instance, data=request.data)
+    except subscriber.DoesNotExist:
+        # If the subscriber does not exist, create a new instance
+        serializer = subcriberSerializer(data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()  # Save the data to the database
+        return Response(serializer.data)
+    return Response(serializer.errors)
+
+
+@api_view(['PUT'])
+def post_msg(request):
+    serializer = messageSerializer(data=request.data)
+    if serializer.is_valid():
+        print(request.data)
+        serializer.save()  # Save the data to the database
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    print(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

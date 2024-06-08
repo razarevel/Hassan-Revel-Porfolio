@@ -33,3 +33,20 @@ class stacks(models.Model):
     img = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     tag = models.CharField(max_length=5, choices=stackTags)
+
+
+class subscriber(models.Model):
+    email = models.CharField(max_length=255, unique=True)
+    aiNews = models.BooleanField(default=False)
+    aiTips = models.BooleanField(default=False)
+    aiUpdates = models.BooleanField(default=False)
+
+
+class messages(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255, unique=False)
+    phone = models.PositiveIntegerField()
+    dial_code = models.CharField(max_length=244)
+    country = models.CharField(max_length=222)
+    msg = models.TextField(default='')

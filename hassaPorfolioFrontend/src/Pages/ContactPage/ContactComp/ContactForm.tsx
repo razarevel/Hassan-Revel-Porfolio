@@ -2,7 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import ContactImage from "./ContactImage";
 import countries from "./countries";
 import FormHeading from "./FormHeading";
-import { useForm } from "react-hook-form";
+import { FieldValue, useForm } from "react-hook-form";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import useZustand from "../../../utilities/zustand";
 interface Countries {
   name: string;
   code: string;
@@ -12,11 +15,13 @@ interface Countries {
   dial_code: string;
 }
 interface Data {
-  firstName: string;
-  secondName: string;
+  first_name: string;
+  last_name: string;
   email: string;
-  number: number;
+  dial_code: string;
+  country: string;
   msg: string;
+  phone: number;
 }
 export default function ContactForm() {
   const [show, setShow] = useState(false);
@@ -57,7 +62,12 @@ export default function ContactForm() {
 
     formState: { errors },
   } = useForm();
-  const [errorIndex, setErrorIndex] = useState<number[]>([]);
+  // const [errorIndex, setErrorIndex] = useState<number[]>([]);
+  const { apiUrl } = useZustand();
+  const url = apiUrl + "messages/";
+
+  const mutation = useMutation((data: Data) => axios.put(url, data));
+
   // console.log(errors);
   return (
     <div
@@ -72,7 +82,16 @@ export default function ContactForm() {
           className="flex flex-col space-y-[10px] lg:space-y-0 mt-[1.2vw]"
           onSubmit={handleSubmit((data) => {
             // submition
-            data.code = flags[select].dial_code;
+            const Data = {
+              first_name: data.first_name,
+              last_name: data.second_name,
+              email: data.email,
+              dial_code: flags[select].dial_code,
+              country: flags[select].name,
+              msg: data.msg,
+              phone: data.phone,
+            };
+            mutation.mutate(Data);
             setSelect(0);
             reset();
           })}
@@ -81,12 +100,12 @@ export default function ContactForm() {
             {/* first name */}
             <div className="">
               <input
-                {...register("firstName", { required: true })}
+                {...register("first_name", { required: true })}
                 type="text"
                 className="focus:outline-none border-[1px] border-[#bcbcbc] w-full h-[42px] text-[12px] px-[10px] text-[#333333] placeholder:text-[#333333] lg:h-[3.063vw] lg:px-[1.375vw] lg:text-[0.875vw]"
                 placeholder="First Name"
               />
-              {errors.firstName?.type === "required" && (
+              {errors.first_name?.type === "required" && (
                 <p className="text-[12px] font-Bold mt-2 py-[16px] px-[10px] lg:px-[1vw] lg:py-[1vw] lg:text-[0.750vw] border-[2px] text-[#790000] border-[#790000] bg-[#FFF9F9]">
                   Please type for first Name
                 </p>
@@ -95,12 +114,12 @@ export default function ContactForm() {
             {/* last name */}
             <div>
               <input
-                {...register("secondName", { required: true })}
+                {...register("second_name", { required: true })}
                 type="text"
                 className="focus:outline-none border-[1px] border-[#bcbcbc] w-full h-[42px] text-[12px] px-[10px] text-[#333333] placeholder:text-[#333333] lg:h-[3.063vw] lg:px-[1.375vw] lg:text-[0.875vw]"
                 placeholder="Last Name"
               />
-              {errors.secondName?.type === "required" && (
+              {errors.second_name?.type === "required" && (
                 <p className="text-[12px] font-Bold mt-2 py-[16px] px-[10px] lg:px-[1vw] lg:py-[1vw] lg:text-[0.750vw] border-[2px] text-[#790000] border-[#790000] bg-[#FFF9F9]">
                   Please type for Second Name
                 </p>
@@ -150,7 +169,7 @@ export default function ContactForm() {
                   </div>
                 )}
                 <input
-                  {...register("Number", {
+                  {...register("phone", {
                     valueAsNumber: true,
                     required: true,
                   })}
@@ -159,7 +178,7 @@ export default function ContactForm() {
                   placeholder="Phone"
                 />
               </div>
-              {errors.Number?.type === "required" && (
+              {errors.phone?.type === "required" && (
                 <p className="text-[12px] font-Bold mt-2 py-[16px] px-[10px] lg:px-[1vw] lg:py-[1vw] lg:text-[0.750vw] border-[2px] text-[#790000] border-[#790000] bg-[#FFF9F9]">
                   Please type for Number
                 </p>
