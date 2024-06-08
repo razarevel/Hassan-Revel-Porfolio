@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import ContactImage from "./ContactImage";
 import countries from "./countries";
 import FormHeading from "./FormHeading";
-import { FieldValue, useForm } from "react-hook-form";
+import {  useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import useZustand from "../../../utilities/zustand";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useZustand from "../../../../utilities/zustand";
 import { useQuery } from "@tanstack/react-query";
 

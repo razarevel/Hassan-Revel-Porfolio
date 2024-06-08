@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import socialContext from "./SocialContext";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+
 interface Props {
   isInView: boolean;
 }

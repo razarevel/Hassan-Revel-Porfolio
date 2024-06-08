@@ -2,13 +2,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
 import axios from "axios";
 import useZustand from "../../../../utilities/zustand";
 import { useQuery } from "@tanstack/react-query";
-import { motion, useInView } from "framer-motion";
 
 interface Reviews {
   name: string;
