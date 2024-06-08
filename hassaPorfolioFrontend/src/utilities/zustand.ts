@@ -10,7 +10,7 @@ interface Props {
   setInViews: (newArray: [number, number, number]) => void;
 }
 const useZustand = create<Props>((set) => ({
-  apiUrl: "http://127.0.0.1:8000/api/",
+  apiUrl: "https://api.hassanrevel.com/api/",
   subsForms: false,
   subsFixForms: false,
   setSubsForm: (show: boolean) => set(() => ({ subsForms: show })),
