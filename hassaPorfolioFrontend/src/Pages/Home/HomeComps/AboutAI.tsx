@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function AboutAI() {
@@ -20,9 +22,20 @@ export default function AboutAI() {
   ];
   const fontStyle = `text-[16px] leading-[2] lg:text-[1.125vw] lg:max-w-[48.625vw]`;
   const img = `https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/images/AI+Girl.jpg`;
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <section id="aboutAI" className="lg:max-w-[94.375vw] mx-auto">
-      <div className="bg-[#1C1C1F] text-white lg:pt-[4.125vw] lg:pb-[2vw] lg:px-[2.313vw] ">
+    <section id="aboutAI" className="lg:max-w-[94.375vw]  mx-auto ">
+      <div
+        className={
+          "bg-[#1C1C1F] text-white lg:pt-[4.125vw] lg:pb-[2vw] lg:px-[2.313vw] relative  " +
+          (!isInView && " h-[1000px] lg:h-[60vw]")
+        }
+      >
+        <div
+          className=" w-[15%] h-[5%] absolute top-[20%] left-0"
+          ref={ref}
+        ></div>
         {/* logo */}
         <h1 className="text-[44px] lg:text-[2.5vw] font-Black px-[30px] pt-[15px] lg:p-0">
           R.
@@ -31,35 +44,59 @@ export default function AboutAI() {
           {/* img */}
           <div className="lg:w-[40%] order-2 lg:order-1 relative">
             <div className="lg:w-[50.875vw] lg:h-[70%] lg:absolute lg:left-[-19vw] lg:top-[6vw] w-full">
-              <img src={img} alt="" className="w-full" />
+              {isInView && (
+                <motion.img
+                  src={img}
+                  alt=""
+                  className="w-full"
+                  initial={{ x: -600, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                  }}
+                />
+              )}
             </div>
           </div>
           {/* context */}
-          <div className="space-y-4 lg:w-[60%] lg:space-y-[1.75vw] order-1 lg:order-2 p-[30px] lg:p-0">
-            {/* heading */}
-            <div className="text-[34px] lg:text-[5.25vw] lg:leading-[0.9]  font-Black  leading-[1.2] uppercase overflow-hidden">
-              <p className="text-bg">
-                artificial int. <br /> ENGINEER{" "}
-              </p>
-            </div>
-            <p className={fontStyle}>{para[0]}</p>
-            {/* border */}
-            <div className="w-full border lg:max-w-[48.625vw] lg:opacity-50"></div>
-            {/* quote */}
-            <p className={fontStyle}>{para[1]}</p>
-            {/* Andrew Ng */}
-            <h1 className="text-[24px] lg:text-[2.5vw] font-Bold ">
-              Andrew Ng
-            </h1>
-            <p className={fontStyle}>{para[2]}</p>
-            <div className="w-full py-[40px] flex items-center justify-center lg:justify-end lg:max-w-[48.625vw]">
-              <Link to="/contact" className="w-full max-w-[300px]">
-                {" "}
-                <div className="text-center bg-white text-black uppercase text-[14px] py-[22px] font-Bold hover:bg-heavyBlue duration-300 hover:text-white w-full">
-                  Contact Revel
-                </div>{" "}
-              </Link>
-            </div>
+          <div className=" lg:w-[60%]  order-1 lg:order-2 p-[30px] lg:p-0 h-full">
+            {isInView && (
+              <motion.div
+                className="space-y-4 lg:space-y-[1.75vw]"
+                initial={{ y: 500, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                }}
+              >
+                {/* heading */}
+                <div className="text-[34px] lg:text-[5.25vw] lg:leading-[0.9]  font-Black  leading-[1.2] uppercase overflow-hidden">
+                  <p className="text-bg">
+                    artificial int. <br /> ENGINEER{" "}
+                  </p>
+                </div>
+                <p className={fontStyle}>{para[0]}</p>
+                {/* border */}
+                <div className="w-full border lg:max-w-[48.625vw] lg:opacity-50"></div>
+                {/* quote */}
+                <p className={fontStyle}>{para[1]}</p>
+                {/* Andrew Ng */}
+                <h1 className="text-[24px] lg:text-[2.5vw] font-Bold ">
+                  Andrew Ng
+                </h1>
+                <p className={fontStyle}>{para[2]}</p>
+                <div className="w-full py-[40px] flex items-center justify-center lg:justify-end lg:max-w-[48.625vw]">
+                  <Link to="/contact" className="w-full max-w-[300px]">
+                    {" "}
+                    <div className="text-center bg-white text-black uppercase text-[14px] py-[22px] font-Bold hover:bg-heavyBlue duration-300 hover:text-white w-full">
+                      Contact Revel
+                    </div>{" "}
+                  </Link>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>

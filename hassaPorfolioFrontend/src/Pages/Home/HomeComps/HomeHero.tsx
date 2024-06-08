@@ -1,3 +1,5 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function HomeHero() {
@@ -10,8 +12,11 @@ export default function HomeHero() {
     { text: "I'm new to Hassan!", link: "/about" },
     { text: "Contact Revel", link: "/contact" },
   ];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  // const revel = ["r", "e", "v", "e", "l"];
   return (
-    <section id="homeHero">
+    <section id="homeHero" ref={ref}>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-[44.81%] lg:order-2 relative">
           <img
@@ -23,19 +28,114 @@ export default function HomeHero() {
         {/* context */}
         <div className="pt-[82px] px-[30px] pb-[50px] space-y-[30px] lg:pl-[5.125vw] lg:pt-[13.938vw] lg:space-y-[2.313vw] lg:w-[55.18%] lg:order-1">
           {/* heading */}
-          <div className="space-y-[-20px] lg:space-y-[-1vw] space-x-[14px] lg:space-x-[4.438vw] uppercase">
-            <h1 className="text-[#949494] text-[46px] lg:text-[4.813vw]">
-              revel
-            </h1>
-            <p className="font-Black text-[46px] lg:text-[6.188vw] text-heavyBlue">
-              hassan
-            </p>
-          </div>
+          {isInView && (
+            <div className="space-y-[-20px] lg:space-y-[-1vw] space-x-[14px] lg:space-x-[4.438vw] uppercase">
+              <motion.h1
+                className="text-[#949494] text-[46px] lg:text-[4.813vw]"
+                initial={{ x: 70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.3,
+                  ease: "linear",
+                }}
+              >
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  r
+                </motion.div>
+                e
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  v
+                </motion.div>
+                e
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  l
+                </motion.div>
+              </motion.h1>
+              <motion.p
+                className="font-Black text-[46px] lg:text-[6.188vw] text-heavyBlue"
+                initial={{ x: 70, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.3,
+                  ease: "linear",
+                }}
+              >
+                h
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  a
+                </motion.div>
+                s
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  s
+                </motion.div>
+                a
+                <motion.div
+                  className="inline-block"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{
+                    delay: 0.3,
+                    duration: 0.3,
+                    ease: "linear",
+                  }}
+                >
+                  n
+                </motion.div>
+              </motion.p>
+            </div>
+          )}
           {/* para */}
           <div>
-            <p className="border-l-[10px] border-darkBlue py-[30px] px-[33px] text-[16px] lg:py-[1vw] lg:px-[1.2vw] lg:text-[1vw] lg:leading-[2] lg:max-w-[45vw]">
-              {para}
-            </p>
+            <div className="border-l-[10px] border-darkBlue py-[30px] px-[33px] text-[16px] lg:py-[1vw] lg:px-[1.2vw] lg:text-[1vw] lg:leading-[2] lg:max-w-[45vw]">
+              <p>{para}</p>
+            </div>
           </div>
           {/* btn */}
           <div className="space-x-4 flex flex-row">

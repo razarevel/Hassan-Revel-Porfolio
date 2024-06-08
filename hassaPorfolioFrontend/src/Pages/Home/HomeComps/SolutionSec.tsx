@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import useZustand from "../../../utilities/zustand";
 import { useQuery } from "@tanstack/react-query";
+import { motion } from "framer-motion";
 interface Solution {
   id: number;
   img: string;
@@ -21,6 +22,7 @@ export default function SolutionSec() {
         .catch((err) => console.log(err));
     },
   });
+
   return (
     <section id="solutionSec">
       <div className="px-[30px] lg:px-[6.6vw] my-[56px] lg:my-[6.6vw] space-y-[34px] lg:space-y-[5.6vw]">
@@ -38,12 +40,21 @@ export default function SolutionSec() {
             ))}
           {!isLoading &&
             solution.map((el: Solution, index) => (
-              <div key={index} className="space-y-5">
-                <img src={el.img} alt="" />
+              <motion.div
+                key={index}
+                className="space-y-5 group  cursor-pointer rounded-lg overflow-hidden"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={el.img}
+                    alt=""
+                    className="group-hover:scale-105 duration-300"
+                  />
+                </div>
                 <h1 className="font-Bold text-[24px] lg:text-[2vw] text-darkBlue">
                   {el.name}
                 </h1>
-              </div>
+              </motion.div>
             ))}
         </div>
         {/* gird */}

@@ -43,14 +43,6 @@ export default function BlogSecGrid() {
                   className="w-full hover:scale-105 duration-300"
                 />
               </div>
-              <div>
-                {/* <h1 className="text-[24px] leading-[1.31] tracking-normal lg:text-[1.8vw] font-Bold text-heavyBlue">
-                {el.name}
-              </h1> */}
-                {/* <p className="text-[10px] lg:text-[1vw] opacity-70">
-                {blogContext.date}
-              </p> */}
-              </div>
             </div>
           ))}
       </div>
