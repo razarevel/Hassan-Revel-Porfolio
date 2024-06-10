@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
 import ScrollToTop from "../../utilities/ScrollToTop";
@@ -10,7 +11,9 @@ import BlogsHeroSM from "./BlogsComp/BlogsHero/BlogsHeroSM";
 
 export default function BlogsPage() {
   const { setSubsFixForm, setSubsForm } = useZustand();
-
+  useEffect(() => {
+    document.title = "Hassan Revel Blogs";
+  }, []);
   return (
     <section id="blogsPage">
       <NavbarMain />

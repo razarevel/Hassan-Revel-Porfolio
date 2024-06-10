@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
 import ScrollToTop from "../../utilities/ScrollToTop";
@@ -8,6 +9,9 @@ import SolutionHeading from "./SolutionComp/SolutionHeading";
 
 export default function SolutionPage() {
   const { setSubsFixForm, setSubsForm } = useZustand();
+  useEffect(() => {
+    document.title = "Hassan Revel Solutions";
+  }, []);
   return (
     <section id="solutionPage">
       <NavbarMain />

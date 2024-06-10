@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import FooterMain from "../../Components/Footer/FooterMain";
 import NavbarMain from "../../Components/Navbar/NavbarMain";
 import ScrollToTop from "../../utilities/ScrollToTop";
@@ -11,6 +12,9 @@ import SolutionSec from "./HomeComps/SolutionSec";
 
 export default function HomePage() {
   const { setSubsFixForm, setSubsForm } = useZustand();
+  useEffect(() => {
+    document.title = "Hassan Revel - AI Engineer";
+  }, []);
   return (
     <section id="Home">
       <NavbarMain />
@@ -26,7 +30,7 @@ export default function HomePage() {
         <Reviews />
         <BlogSec />
         <SocialMedia />
-        <FooterMain />
+        <FooterMain img={true} />
       </div>
       <ScrollToTop />
     </section>

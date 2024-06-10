@@ -22,17 +22,19 @@ export default function SocialGrid({ isInView }: Props) {
   ];
   return (
     <section id="socialGrid">
-      <div className="space-y-20  text-black max-w-[280px] mx-auto lg:flex lg:max-w-[92.375vw] lg:space-y-0 lg:space-x-[1vw]">
+      <motion.div
+        className="space-y-20  text-black max-w-[280px] mx-auto lg:flex lg:max-w-[92.375vw] lg:space-y-0 lg:space-x-[1vw]"
+        initial={{ y: 500, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
         {isInView &&
           socialContext.map((el, index) => (
-            <motion.div
-              initial={{ y: 500, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.2,
-                duration: 0.5,
-                ease: "easeInOut",
-              }}
+            <div
               className={`lg:w-full hover:-translate-y-4 duration-300   ${customMT[index]}`}
               key={index}
             >
@@ -66,9 +68,9 @@ export default function SocialGrid({ isInView }: Props) {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

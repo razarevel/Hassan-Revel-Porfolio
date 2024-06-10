@@ -36,21 +36,23 @@ export default function FooterList2() {
               <img
                 src="https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/icons/phone.png"
                 alt=""
-                className="w-[20px] lg:w-[25px] rotate-[270deg]"
+                className="w-[20px] lg:w-[25px] rotate-[270deg] duration-300 hover:opacity-70"
               />
-              <p>+923257450912</p>
+              <p className="duration-300 hover:opacity-70">+923257450912</p>
             </div>
           </a>
         </div>
         <div>
           <a href="mailto: hassanrevel@hotmail.com">
-            <div className="text-[16px] lg:text-[1vw] flex items-center space-x-4">
+            <div className="text-[16px] lg:text-[1vw] flex items-center space-x-4 ">
               <img
                 src="https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/icons/envelope.png"
                 alt=""
-                className="w-[20px] lg:w-[25px]"
+                className="w-[20px] lg:w-[25px] duration-300 hover:opacity-70"
               />
-              <p>hassanrevel@hotmail.com</p>
+              <p className="duration-300 hover:opacity-70">
+                hassan@hassanrevel.com
+              </p>
             </div>
           </a>
         </div>

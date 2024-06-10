@@ -29,106 +29,42 @@ export default function HomeHero() {
         <div className="pt-[82px] px-[30px] pb-[50px] space-y-[30px] lg:pl-[5.125vw] lg:pt-[13.938vw] lg:space-y-[2.313vw] lg:w-[55.18%] lg:order-1">
           {/* heading */}
           {isInView && (
-            <div className="space-y-[-20px] lg:space-y-[-1vw] space-x-[14px] lg:space-x-[4.438vw] uppercase">
-              <motion.h1
-                className="text-[#949494] text-[46px] lg:text-[4.813vw]"
-                initial={{ x: 70, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  delay: 0.3,
-                  duration: 0.3,
-                  ease: "linear",
-                }}
-              >
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  r
-                </motion.div>
-                e
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  v
-                </motion.div>
-                e
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  l
-                </motion.div>
+            <div className="space-y-[-20px] lg:space-y-[-1vw] space-x-[10%] lg:space-x-[10vw] uppercase">
+              <motion.h1 className="text-[#949494] text-[46px] lg:text-[4.813vw]">
+                {"Hassan".split("").map((el, index) => (
+                  <motion.div
+                    className="inline-block"
+                    key={index}
+                    initial={{ x: 70, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.3,
+                      ease: "linear",
+                    }}
+                  >
+                    {el}
+                  </motion.div>
+                ))}
               </motion.h1>
-              <motion.p
-                className="font-Black text-[46px] lg:text-[6.188vw] text-heavyBlue"
-                initial={{ x: 70, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{
-                  delay: 0.3,
-                  duration: 0.3,
-                  ease: "linear",
-                }}
-              >
-                h
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  a
-                </motion.div>
-                s
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  s
-                </motion.div>
-                a
-                <motion.div
-                  className="inline-block"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{
-                    delay: 0.3,
-                    duration: 0.3,
-                    ease: "linear",
-                  }}
-                >
-                  n
-                </motion.div>
-              </motion.p>
+
+              <motion.h1 className="font-Black text-[46px] lg:text-[6.188vw] text-heavyBlue">
+                {"Revel".split("").map((el, index) => (
+                  <motion.div
+                    className="inline-block"
+                    key={index}
+                    initial={{ x: 70, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.3,
+                      ease: "linear",
+                    }}
+                  >
+                    {el}
+                  </motion.div>
+                ))}
+              </motion.h1>
             </div>
           )}
           {/* para */}

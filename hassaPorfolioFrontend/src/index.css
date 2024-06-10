@@ -161,3 +161,11 @@
     background-position-x: -200%;
   }
 }
+
+.footer-img {
+  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+}
