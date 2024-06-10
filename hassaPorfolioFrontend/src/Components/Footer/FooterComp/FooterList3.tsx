@@ -83,7 +83,7 @@ export default function FooterList3() {
                 className="w-full h-full cursor-pointer"
               />
             </div>
-            <p>{el}</p>
+            <p className="duration-300 hover:opacity-70">{el}</p>
           </div>
         ))}
       </div>
