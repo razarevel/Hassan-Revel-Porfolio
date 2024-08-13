@@ -5,9 +5,7 @@ import "swiper/css";
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import { Autoplay } from "swiper/modules";
-import axios from "axios";
-import useZustand from "../../../../utilities/zustand";
-import { useQuery } from "@tanstack/react-query";
+
 import reviews from "../../../../../public/reviews";
 
 export default function ReviewSlider() {
