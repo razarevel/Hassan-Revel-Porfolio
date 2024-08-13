@@ -29,7 +29,7 @@ export default function NavDeskList2() {
     <div
       className="h-full flex items-center justify-center right-0 top-0 absolute"
       style={{
-        background: `url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/cmh-right-bg.jpg")`,
+        background: `url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/cmh-right-bg.jpg")`,
       }}
       onClick={() => subsFixForms && setSubsFixForm(false)}
     >

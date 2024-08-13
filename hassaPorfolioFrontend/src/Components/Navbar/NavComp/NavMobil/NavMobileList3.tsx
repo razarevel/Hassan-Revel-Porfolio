@@ -46,7 +46,7 @@ export default function NavMobileList3({ show, setShow }: Props) {
         <motion.div
           className="absolute right-0 top-0 z-30  w-[280px] space-y-[4vh]"
           style={{
-            background: `url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/cmh-left-bg.jpg")`,
+            background: `url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/cmh-right-bg.jpg")`,
           }}
           initial={{ y: -140, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -63,7 +63,7 @@ export default function NavMobileList3({ show, setShow }: Props) {
               </Link>
             </div>
             <div
-              className="flex items-center justify-center w-[25%] h-full absolute right-0 top-0 text-white "
+              className="flex items-center justify-center w-[25%] h-full absolute right-0 top-0 text-white"
               style={{
                 background: `url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/cmh-right-bg.jpg")`,
               }}
@@ -76,7 +76,7 @@ export default function NavMobileList3({ show, setShow }: Props) {
           <div className="font-Bold text-[2.2vh] space-y-[1vh] uppercase px-[4vh]">
             {context.map((el, index) => (
               <div key={index} className="hover:text-heavyBlue duration-300">
-                <Link to={el.link} target={el.target}>
+                <Link to={el.link} target={el.target} className="text-white">
                   {el.text}
                 </Link>
               </div>

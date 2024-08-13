@@ -55,14 +55,14 @@
 
 /* nav bg */
 .nav-bg {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/fixed-header-left-bg.jpg");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/fixed-header-left-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .navbar-img {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/contact/header-bg.jpg");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/header-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -81,7 +81,7 @@
   background-repeat: no-repeat;
 }
 .sub-bg-img {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/fixed-header-subscribe-bg.png");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/cmh-right-bg.jpg");
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@
 }
 .text-bg {
   background: transparent
-    url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/homepage/real-estate-heading-bg.jpg");
+    url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/real-estate-heading-bg.jpg");
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -134,13 +134,13 @@
   z-index: 20 !important;
 }
 .insta-bg {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/instagram-bg.jpg");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/instagram-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .blog-img {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/mp-vlog-bg.jpg");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/mp-vlog-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -163,7 +163,7 @@
 }
 
 .footer-img {
-  background-image: url("https://ryanserhant.com/wp-content/themes/ryanserhant.com/assets/images/footer-bg.jpg");
+  background-image: url("https://hassan-revel-profolio.s3.eu-west-2.amazonaws.com/src/assets/footer-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
